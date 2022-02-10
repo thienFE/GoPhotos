@@ -21,8 +21,8 @@ function Search({ addKeyword }) {
 
   return (
     <form onSubmit={(e) => handleSearch(e)} className="search-container">
-      <input value={inputValue} onChange={(e) => handleChange(e)} type="text" />
-      <input type="submit" value="Search" onClick={(e) => handleSearch(e)} />
+      <input className="search-input" value={inputValue} onChange={(e) => handleChange(e)} type="text" />
+      <button className="search-btn" type="submit" onClick={(e) => handleSearch(e)}>Search</button>
       <button onClick={() => addKeyword("")}>All</button>
     </form>
   );
