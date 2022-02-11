@@ -5,24 +5,35 @@ import { addKeyword } from "../../store/actions/photoActions";
 import "./Search.scss";
 
 function Search({ addKeyword }) {
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e) => {
-    setInputValue(e.target.value)
+    setInputValue(e.target.value);
   };
 
   const handleSearch = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (inputValue.trim() && inputValue !== ".") {
-      addKeyword(inputValue)
+      addKeyword(inputValue);
     }
-    setInputValue("")
-  }
+    setInputValue("");
+  };
 
   return (
     <form onSubmit={(e) => handleSearch(e)} className="search-container">
-      <input className="search-input" value={inputValue} onChange={(e) => handleChange(e)} type="text" />
-      <button className="search-btn" type="submit" onClick={(e) => handleSearch(e)}>Search</button>
+      <input
+        className="search-input"
+        value={inputValue}
+        onChange={(e) => handleChange(e)}
+        type="text"
+      />
+      <button
+        className="search-btn"
+        type="submit"
+        onClick={(e) => handleSearch(e)}
+      >
+        Search
+      </button>
       <button onClick={() => addKeyword("")}>All</button>
     </form>
   );
